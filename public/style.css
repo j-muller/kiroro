@@ -121,6 +121,25 @@ textarea:focus {
   transform: scale(0.95);
 }
 
+.player-join-btn.taken {
+  background: #f0f0f0;
+  border-color: #ccc;
+  position: relative;
+}
+
+.player-join-btn.taken::after {
+  content: '✓ Taken';
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: #dc3545;
+  color: white;
+  padding: 2px 8px;
+  border-radius: 5px;
+  font-size: 0.75em;
+  font-weight: 600;
+}
+
 .player-name {
   font-size: 1.5em;
   font-weight: 700;
@@ -176,6 +195,47 @@ textarea:focus {
 
 .btn-secondary:not(:disabled):active {
   transform: scale(0.97);
+}
+
+.host-players-online {
+  margin-top: 20px;
+  background: white;
+  border-radius: 10px;
+  padding: 15px;
+}
+
+.host-players-online h4 {
+  color: #333;
+  font-size: 1em;
+  margin: 0 0 10px 0;
+}
+
+.host-player-status {
+  display: flex;
+  align-items: center;
+  padding: 8px;
+  margin: 5px 0;
+  background: #f5f5f5;
+  border-radius: 5px;
+  font-size: 0.9em;
+}
+
+.host-player-status.online {
+  border-left: 3px solid #56ab2f;
+}
+
+.host-player-status .status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #56ab2f;
+  margin-right: 8px;
+}
+
+.host-player-status .player-info {
+  flex: 1;
+  color: #333;
+  font-weight: 600;
 }
 
 .players-waiting {

@@ -34,6 +34,10 @@ io.on('connection', (socket) => {
 
   // Send current game state to newly connected player
   socket.emit('gameState', gameState);
+  
+  // Send list of taken roles
+  const takenRoles = Object.values(gameState.players).map(p => p.role);
+  socket.emit('takenRoles', takenRoles);
 
   // Player joins
   socket.on('join', (playerData) => {
@@ -53,6 +57,18 @@ io.on('connection', (socket) => {
     console.log(`${playerData.name} joined as ${playerData.role}`);
     io.emit('playerJoined', gameState.players[socket.id]);
     io.emit('gameState', gameState);
+    
+    // Broadcast updated taken roles to all clients
+    const takenRoles = Object.values(gameState.players).map(p => p.role);
+    io.emit('takenRoles', takenRoles);
+    
+    // If game is in progress, send current question to rejoining player
+    if (gameState.phase === 'question' && gameState.currentQuestion) {
+      socket.emit('newQuestion', gameState.currentQuestion);
+    } else if (gameState.phase === 'reveal' && gameState.currentQuestion) {
+      socket.emit('newQuestion', gameState.currentQuestion);
+      socket.emit('showAnswers', gameState.answers);
+    }
   });
 
   // Host starts the game
@@ -187,7 +203,16 @@ io.on('connection', (socket) => {
       delete gameState.players[socket.id];
       delete gameState.scores[socket.id];
       
+      // Remove their answer if they disconnect during a question
+      if (gameState.answers[socket.id]) {
+        delete gameState.answers[socket.id];
+      }
+      
       io.emit('playerLeft', { id: socket.id, name: playerName });
+      
+      // Broadcast updated taken roles to all clients
+      const takenRoles = Object.values(gameState.players).map(p => p.role);
+      io.emit('takenRoles', takenRoles);
       
       // Assign new host if current host (Jeffrey) left
       if (socket.id === gameState.host) {

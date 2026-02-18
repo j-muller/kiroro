@@ -93,13 +93,26 @@ function joinGame() {
     role: selectedRole,
     couple: selectedCouple
   };
+  
+  // After joining, update to current game phase
+  if (gameState) {
+    updateScreen(gameState.phase);
+    updateScores(gameState.scores);
+  }
 }
 
 // Socket event handlers
 socket.on('gameState', (state) => {
   gameState = state;
-  updateScreen(state.phase);
-  updateScores(state.scores);
+  // Only update screen if player has joined
+  if (currentPlayer) {
+    updateScreen(state.phase);
+    updateScores(state.scores);
+  }
+  // Update host players list whenever game state changes
+  if (isHost) {
+    updateHostPlayersList();
+  }
 });
 
 socket.on('hostStatus', (status) => {
@@ -108,14 +121,21 @@ socket.on('hostStatus', (status) => {
   document.getElementById('hostQuestionControls').style.display = isHost ? 'block' : 'none';
   document.getElementById('hostRevealControls').style.display = isHost ? 'block' : 'none';
   document.getElementById('hostResultControls').style.display = isHost ? 'block' : 'none';
+  
+  // Update player list if host
+  if (isHost && gameState) {
+    updateHostPlayersList();
+  }
 });
 
 socket.on('playerJoined', (player) => {
-  updatePlayersList();
+  // playerJoined just notifies, we'll get updated gameState separately
+  // The updateHostPlayersList will be called when gameState event fires
 });
 
 socket.on('playerLeft', (data) => {
-  updatePlayersList();
+  // playerLeft just notifies, we'll get updated gameState separately
+  // The updateHostPlayersList will be called when gameState event fires
 });
 
 socket.on('newQuestion', (question) => {
@@ -150,6 +170,10 @@ socket.on('gameOver', (scores) => {
   displayFinalScores(scores);
 });
 
+socket.on('takenRoles', (roles) => {
+  updateAvailableRoles(roles);
+});
+
 function updateScreen(phase) {
   Object.values(screens).forEach(screen => screen.classList.remove('active'));
   
@@ -160,9 +184,15 @@ function updateScreen(phase) {
       break;
     case 'question':
       screens.question.classList.add('active');
+      if (isHost) {
+        updateHostPlayersList();
+      }
       break;
     case 'reveal':
       screens.reveal.classList.add('active');
+      if (isHost) {
+        updateHostPlayersList();
+      }
       break;
     case 'results':
       screens.results.classList.add('active');
@@ -180,6 +210,44 @@ function updatePlayersList() {
       <span class="player-role">${player.role}</span>
     </div>
   `).join('');
+}
+
+function updateHostPlayersList() {
+  if (!gameState || !gameState.players) return;
+  
+  const players = Object.values(gameState.players);
+  const hostListHtml = players.map(player => `
+    <div class="host-player-status online">
+      <span class="status-dot"></span>
+      <span class="player-info">${player.name}</span>
+    </div>
+  `).join('');
+  
+  // Update both question and reveal screen lists
+  const questionList = document.getElementById('hostPlayersList');
+  const revealList = document.getElementById('hostPlayersListReveal');
+  
+  if (questionList) questionList.innerHTML = hostListHtml;
+  if (revealList) revealList.innerHTML = hostListHtml;
+}
+
+function updateAvailableRoles(takenRoles) {
+  document.querySelectorAll('.player-join-btn').forEach(btn => {
+    const role = btn.dataset.role;
+    const isTaken = takenRoles.includes(role);
+    
+    btn.disabled = isTaken;
+    
+    if (isTaken) {
+      btn.classList.add('taken');
+      btn.style.opacity = '0.5';
+      btn.style.cursor = 'not-allowed';
+    } else {
+      btn.classList.remove('taken');
+      btn.style.opacity = '1';
+      btn.style.cursor = 'pointer';
+    }
+  });
 }
 
 function displayQuestion(question) {
