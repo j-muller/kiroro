@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>💑 The Newlywed Game</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="app">
+    <!-- Lobby Screen -->
+    <div id="lobby" class="screen active">
+      <div class="container">
+        <h1>💑 The Newlywed Game</h1>
+        <p class="subtitle">Who are you?</p>
+        
+        <div class="join-form">
+          <div class="role-selection">
+            <div class="role-buttons">
+              <button class="player-join-btn" data-couple="Jeffrey / Eilene" data-role="Jeffrey">
+                <div class="player-name">Jeffrey</div>
+                <div class="player-subtitle">from Jeffrey & Eilene</div>
+              </button>
+              <button class="player-join-btn" data-couple="Jeffrey / Eilene" data-role="Eilene">
+                <div class="player-name">Eilene</div>
+                <div class="player-subtitle">from Jeffrey & Eilene</div>
+              </button>
+              <button class="player-join-btn" data-couple="Nadja / Julian" data-role="Nadja">
+                <div class="player-name">Nadja</div>
+                <div class="player-subtitle">from Nadja & Julian</div>
+              </button>
+              <button class="player-join-btn" data-couple="Nadja / Julian" data-role="Julian">
+                <div class="player-name">Julian</div>
+                <div class="player-subtitle">from Nadja & Julian</div>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="players-waiting">
+          <h3>Players in Lobby:</h3>
+          <div id="playersList"></div>
+        </div>
+
+        <div id="hostControls" style="display: none;">
+          <button id="startGameBtn" class="btn btn-success">Start Game</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Question Screen -->
+    <div id="questionScreen" class="screen">
+      <div class="container">
+        <div class="question-header">
+          <div class="progress-info">
+            <span id="questionNumber">Question 1/25</span>
+            <span id="yourScore">Your Score: 0</span>
+          </div>
+        </div>
+
+        <div class="question-card">
+          <div class="question-meta">
+            <span id="askedTo"></span> about <span id="aboutWho"></span>
+          </div>
+          <h2 id="questionText"></h2>
+          
+          <!-- Multiple choice options -->
+          <div id="optionsContainer" class="options">
+          </div>
+
+          <!-- Free answer input -->
+          <div id="freeAnswerContainer" style="display: none;">
+            <textarea id="freeAnswerInput" placeholder="Type your answer here..." rows="4"></textarea>
+          </div>
+
+          <button id="submitAnswerBtn" class="btn btn-primary" disabled>Submit Answer</button>
+          <div id="waitingMessage" style="display: none;">
+            <p class="waiting-text">✓ Answer submitted! Waiting for others...</p>
+          </div>
+        </div>
+
+        <!-- Host controls -->
+        <div id="hostQuestionControls" style="display: none;">
+          <h3>Host Controls</h3>
+          <div id="answersReceived"></div>
+          <button id="skipQuestionBtn" class="btn btn-secondary">Skip Question</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Reveal Answers Screen -->
+    <div id="revealScreen" class="screen">
+      <div class="container">
+        <h2>Answers Revealed</h2>
+        <div id="answersDisplay"></div>
+        
+        <div id="hostRevealControls" style="display: none;">
+          <button id="nextQuestionBtn" class="btn btn-primary">Next Question</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Results Screen -->
+    <div id="resultsScreen" class="screen">
+      <div class="container">
+        <h1>🏆 Game Over!</h1>
+        <h2>Final Scores</h2>
+        <div id="finalScores"></div>
+        
+        <div id="hostResultControls" style="display: none;">
+          <button id="playAgainBtn" class="btn btn-success">Play Again</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="game.js"></script>
+</body>
+</html>

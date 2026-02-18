@@ -1,0 +1,320 @@
+{
+  "gameTitle": "The Newlywed Game - Custom Questions",
+  "couples": [
+    {
+      "name": "Jeffrey / Eilene",
+      "members": ["Jeffrey", "Eilene"]
+    },
+    {
+      "name": "Nadja / Julian",
+      "members": ["Nadja", "Julian"]
+    }
+  ],
+  "questions": [
+    {
+      "id": 1,
+      "couple": "Jeffrey / Eilene",
+      "askedTo": "Jeffrey",
+      "about": "Eilene",
+      "questionText": "Eilene's childhood nickname was:",
+      "questionType": "multiple_choice",
+      "options": [
+        {"key": "A", "text": "Cutie Pie"},
+        {"key": "B", "text": "Little Star"},
+        {"key": "C", "text": "Happy Girl"},
+        {"key": "D", "text": "Sweet Pea"}
+      ]
+    },
+    {
+      "id": 2,
+      "couple": "Nadja / Julian",
+      "askedTo": "Nadja",
+      "about": "Julian",
+      "questionText": "Julian's secret crush on a famous person is:",
+      "questionType": "multiple_choice",
+      "options": [
+        {"key": "A", "text": "An actor from an old movie"},
+        {"key": "B", "text": "A popular singer today"},
+        {"key": "C", "text": "A famous scientist"},
+        {"key": "D", "text": "A character from a comic book"}
+      ]
+    },
+    {
+      "id": 3,
+      "couple": "Jeffrey / Eilene",
+      "askedTo": "Eilene",
+      "about": "Jeffrey",
+      "questionText": "What is Jeffrey's comfort food from childhood?",
+      "questionType": "free_answer",
+      "options": []
+    },
+    {
+      "id": 4,
+      "couple": "Nadja / Julian",
+      "askedTo": "Julian",
+      "about": "Nadja",
+      "questionText": "Nadja would like to be like this fictional character:",
+      "questionType": "free_answer",
+      "options": []
+    },
+    {
+      "id": 5,
+      "couple": "Jeffrey / Eilene",
+      "askedTo": "Jeffrey",
+      "about": "Eilene",
+      "questionText": "If Eilene could learn any language easily, it would be:",
+      "questionType": "multiple_choice",
+      "options": [
+        {"key": "A", "text": "Spanish"},
+        {"key": "B", "text": "French"},
+        {"key": "C", "text": "Japanese"},
+        {"key": "D", "text": "German"}
+      ]
+    },
+    {
+      "id": 6,
+      "couple": "Nadja / Julian",
+      "askedTo": "Nadja",
+      "about": "Julian",
+      "questionText": "Julian's dream job if he didn't need money is:",
+      "questionType": "multiple_choice",
+      "options": [
+        {"key": "A", "text": "Traveling the world as a photographer"},
+        {"key": "B", "text": "Owning a quiet bookstore"},
+        {"key": "C", "text": "Being a famous musician"},
+        {"key": "D", "text": "Inventing new things"}
+      ]
+    },
+    {
+      "id": 7,
+      "couple": "Jeffrey / Eilene",
+      "askedTo": "Eilene",
+      "about": "Jeffrey",
+      "questionText": "Jeffrey's most annoying habit in public places is:",
+      "questionType": "multiple_choice",
+      "options": [
+        {"key": "A", "text": "Talking very loudly"},
+        {"key": "B", "text": "Making loud eating noises"},
+        {"key": "C", "text": "Not cleaning up after himself"},
+        {"key": "D", "text": "Being very slow when walking"}
+      ]
+    },
+    {
+      "id": 8,
+      "couple": "Nadja / Julian",
+      "askedTo": "Julian",
+      "about": "Nadja",
+      "questionText": "Nadja's best hidden talent is:",
+      "questionType": "multiple_choice",
+      "options": [
+        {"key": "A", "text": "Singing very well"},
+        {"key": "B", "text": "Solving difficult puzzles"},
+        {"key": "C", "text": "Making funny voices"},
+        {"key": "D", "text": "Remembering important dates"}
+      ]
+    },
+    {
+      "id": 9,
+      "couple": "Jeffrey / Eilene",
+      "askedTo": "Jeffrey",
+      "about": "Eilene",
+      "questionText": "What is Eilene's favorite TV show that she might feel a little shy to admit?",
+      "questionType": "free_answer",
+      "options": []
+    },
+    {
+      "id": 10,
+      "couple": "Nadja / Julian",
+      "askedTo": "Nadja",
+      "about": "Julian",
+      "questionText": "Julian's ideal first date would be:",
+      "questionType": "free_answer",
+      "options": []
+    },
+    {
+      "id": 11,
+      "couple": "Jeffrey / Eilene",
+      "askedTo": "Eilene",
+      "about": "Jeffrey",
+      "questionText": "If Jeffrey could be any animal for a day, he would choose to be:",
+      "questionType": "multiple_choice",
+      "options": [
+        {"key": "A", "text": "An eagle"},
+        {"key": "B", "text": "A dolphin"},
+        {"key": "C", "text": "A lion"},
+        {"key": "D", "text": "An elephant"}
+      ]
+    },
+    {
+      "id": 12,
+      "couple": "Nadja / Julian",
+      "askedTo": "Julian",
+      "about": "Nadja",
+      "questionText": "Nadja's dream superpower would be:",
+      "questionType": "multiple_choice",
+      "options": [
+        {"key": "A", "text": "To teleport"},
+        {"key": "B", "text": "To talk to animals"},
+        {"key": "C", "text": "To be invisible"},
+        {"key": "D", "text": "To move very fast"}
+      ]
+    },
+    {
+      "id": 13,
+      "couple": "Jeffrey / Eilene",
+      "askedTo": "Jeffrey",
+      "about": "Eilene",
+      "questionText": "What is Eilene's favorite fast-food guilty pleasure?",
+      "questionType": "free_answer",
+      "options": []
+    },
+    {
+      "id": 14,
+      "couple": "Nadja / Julian",
+      "askedTo": "Nadja",
+      "about": "Julian",
+      "questionText": "Julian's perfect way to relax on a Sunday is:",
+      "questionType": "free_answer",
+      "options": []
+    },
+    {
+      "id": 15,
+      "couple": "Jeffrey / Eilene",
+      "askedTo": "Eilene",
+      "about": "Jeffrey",
+      "questionText": "If Jeffrey wrote a book about his life, what would the title be?",
+      "questionType": "multiple_choice",
+      "options": [
+        {"key": "A", "text": "My Amazing Adventures"},
+        {"key": "B", "text": "The Life of a Quiet Man"},
+        {"key": "C", "text": "Just Jeffrey"},
+        {"key": "D", "text": "From Zero to Hero"}
+      ]
+    },
+    {
+      "id": 16,
+      "couple": "Nadja / Julian",
+      "askedTo": "Julian",
+      "about": "Nadja",
+      "questionText": "Nadja's least favorite household chore is:",
+      "questionType": "multiple_choice",
+      "options": [
+        {"key": "A", "text": "Washing dishes"},
+        {"key": "B", "text": "Cleaning the bathroom"},
+        {"key": "C", "text": "Folding clothes"},
+        {"key": "D", "text": "Sweeping the floor"}
+      ]
+    },
+    {
+      "id": 17,
+      "couple": "Jeffrey / Eilene",
+      "askedTo": "Jeffrey",
+      "about": "Eilene",
+      "questionText": "Eilene's favorite type of music is:",
+      "questionType": "multiple_choice",
+      "options": [
+        {"key": "A", "text": "Pop music"},
+        {"key": "B", "text": "Rock music"},
+        {"key": "C", "text": "Classical music"},
+        {"key": "D", "text": "Electronic music"}
+      ]
+    },
+    {
+      "id": 18,
+      "couple": "Nadja / Julian",
+      "askedTo": "Nadja",
+      "about": "Julian",
+      "questionText": "Julian's favorite childhood toy was:",
+      "questionType": "free_answer",
+      "options": []
+    },
+    {
+      "id": 19,
+      "couple": "Jeffrey / Eilene",
+      "askedTo": "Eilene",
+      "about": "Jeffrey",
+      "questionText": "Jeffrey's favorite hobby is:",
+      "questionType": "free_answer",
+      "options": []
+    },
+    {
+      "id": 20,
+      "couple": "Nadja / Julian",
+      "askedTo": "Julian",
+      "about": "Nadja",
+      "questionText": "Nadja's favorite season is:",
+      "questionType": "multiple_choice",
+      "options": [
+        {"key": "A", "text": "Spring"},
+        {"key": "B", "text": "Summer"},
+        {"key": "C", "text": "Autumn"},
+        {"key": "D", "text": "Winter"}
+      ]
+    },
+    {
+      "id": 21,
+      "couple": "Jeffrey / Eilene",
+      "askedTo": "Jeffrey",
+      "about": "Eilene",
+      "questionText": "What is Eilene's favorite snack that reminds her of childhood?",
+      "questionType": "free_answer",
+      "options": []
+    },
+    {
+      "id": 22,
+      "couple": "Nadja / Julian",
+      "askedTo": "Nadja",
+      "about": "Julian",
+      "questionText": "Julian's favorite type of food is:",
+      "questionType": "multiple_choice",
+      "options": [
+        {"key": "A", "text": "Italian"},
+        {"key": "B", "text": "Mexican"},
+        {"key": "C", "text": "Asian"},
+        {"key": "D", "text": "American comfort food"}
+      ]
+    },
+    {
+      "id": 23,
+      "couple": "Jeffrey / Eilene",
+      "askedTo": "Eilene",
+      "about": "Jeffrey",
+      "questionText": "If Jeffrey could have a theme song play every time he entered a room, it would be:",
+      "questionType": "multiple_choice",
+      "options": [
+        {"key": "A", "text": "An epic adventure song"},
+        {"key": "B", "text": "A funny cartoon theme"},
+        {"key": "C", "text": "A classic rock song"},
+        {"key": "D", "text": "A charming, romantic tune"}
+      ]
+    },
+    {
+      "id": 24,
+      "couple": "Nadja / Julian",
+      "askedTo": "Nadja",
+      "about": "Julian",
+      "questionText": "Julian's favorite cartoon character from his childhood was:",
+      "questionType": "multiple_choice",
+      "options": [
+        {"key": "A", "text": "A superhero (like Batman or Spider-Man)"},
+        {"key": "B", "text": "A funny character (like Bugs Bunny or SpongeBob)"},
+        {"key": "C", "text": "A character from an anime"},
+        {"key": "D", "text": "A Disney character"}
+      ]
+    },
+    {
+      "id": 25,
+      "couple": "Jeffrey / Eilene",
+      "askedTo": "Jeffrey",
+      "about": "Eilene",
+      "questionText": "What is Eilene's perfect Saturday morning activity?",
+      "questionType": "multiple_choice",
+      "options": [
+        {"key": "A", "text": "Sleeping in late"},
+        {"key": "B", "text": "Reading a good book"},
+        {"key": "C", "text": "Going for a walk or run"},
+        {"key": "D", "text": "Having a special breakfast"}
+      ]
+    }
+  ]
+}
