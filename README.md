@@ -30,7 +30,7 @@ npm start
 **Option 2: Using Docker**
 ```bash
 docker build -t newlywed-game .
-docker run -p 3000:3000 newlywed-game
+docker run -p 8555:8555 newlywed-game
 ```
 
 **Option 3: Using Docker Compose**
@@ -38,7 +38,7 @@ docker run -p 3000:3000 newlywed-game
 docker-compose up
 ```
 
-The server will start on `http://localhost:3000`
+The server will start on `http://localhost:8555`
 
 ### How to Play
 
@@ -70,7 +70,7 @@ ipconfig
 
 Look for your local IP (usually starts with `192.168.` or `10.`)
 
-Then players visit: `http://192.168.x.x:3000` (replace with your IP)
+Then players visit: `http://192.168.x.x:8555` (replace with your IP)
 
 ## 🎯 Game Flow
 

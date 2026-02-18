@@ -16,7 +16,7 @@ COPY questions.json .
 COPY public/ ./public/
 
 # Expose port
-EXPOSE 3000
+EXPOSE 8555
 
 # Start the application
 CMD ["npm", "start"]

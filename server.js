@@ -202,7 +202,7 @@ io.on('connection', (socket) => {
   });
 });
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 8555;
 httpServer.listen(PORT, () => {
   console.log(`🎮 Newlywed Game Server running on port ${PORT}`);
   console.log(`📱 Open http://localhost:${PORT} on your smartphones to play!`);
